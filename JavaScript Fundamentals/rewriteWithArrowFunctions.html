@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>checkTheRangeBetween</title>
+    <title>rewriteWithArrowFunctions</title>
   </head>
   <body>
     <script>
-      let age = prompt("Write yours age", "");
-
-      if ((age) => 14 && age <= 90) {
-        alert("Age is between 14 and 90");
-      } else {
-        alert("Age is not between 14 and 90");
+      function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
       }
+
+      ask(
+        "Do you agree?",
+        () => alert("You agreed."),
+        () => alert("You canceled the execution.")
+      );
     </script>
   </body>
 </html>
